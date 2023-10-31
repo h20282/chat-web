@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>聊天页面</title>
+    <style>
+        body{
+            background-color: #eee;
+        }
+        .chat-body{
+            width: 70%;
+            margin: auto;
+            background-color:#fff;
+            border-radius: 5px;
+        }
+        .msg_list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .msg-left,
+        .msg-right {
+            display: flex;
+            margin: 10px;
+        }
+        .msg-wraper{
+            flex-direction: column;
+        }
+
+        .msg-left{
+            justify-content: flex-start;
+        }
+        .msg-right {
+            justify-content: flex-end;
+        }
+
+        .msg-time {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .msg-content {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            width: min-content;
+        }
+
+        input {
+            width: 70%;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        button {
+            width: 15%;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-body">
+    <div class="msg_list">
+        <div class="msg-left">
+            <div class="msg-wraper">
+                <div class="msg-time">2023/10/31 22:22:40</div>
+                <div class="msg-content">hello</div>
+            </div>
+        </div>
+        <div class="msg-right">
+            <div class="msg-wraper">
+                <div class="msg-time">2023/10/31 22:23:40</div>
+                <div class="msg-content">world</div>
+            </div>
+        </div>
+    </div>
+    <input placeholder="请输入消息内容"/>
+    <button>发送</button>
+    </div>
+</body>
+</html>
