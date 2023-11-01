@@ -3,14 +3,27 @@
 <head>
     <title>聊天页面</title>
     <style>
+        html{
+            height: 90%;
+        }
         body{
             background-color: #eee;
+            height: 100%;
         }
         .chat-body{
             width: 70%;
+            height: 90%;
+            max-height:100%;
+            margin: auto;
+            background-color:#f8f8f8;
+            border-radius: 10px;
+        }
+        .chat-input{
+            width: 70%;
             margin: auto;
             background-color:#fff;
-            border-radius: 5px;
+            border-radius: 10px;
+            display: flex;
         }
         .msg_list {
             display: flex;
@@ -27,10 +40,20 @@
         }
 
         .msg-left{
-            justify-content: flex-start;
+            flex-direction:row;
         }
         .msg-right {
-            justify-content: flex-end;
+            flex-direction:row-reverse;
+        }
+        .msg-left > .msg-wraper > .msg-content{
+            border-top-left-radius: 0px;
+        }
+        .msg-right > .msg-wraper > .msg-content{
+            border-top-right-radius: 0px;
+        }
+
+        .username{
+            margin: 10px;
         }
 
         .msg-time {
@@ -41,21 +64,28 @@
         .msg-content {
             background-color: #f0f0f0;
             padding: 10px;
-            border-radius: 5px;
+            border-radius: 10px;
             width: min-content;
         }
 
         input {
-            width: 70%;
-            margin: 10px;
+            flex: 1; /* Takes up remaining space */
             padding: 10px;
+            border: 1px #ccc;
+            border-radius: 10px;
         }
 
         button {
-            width: 15%;
-            margin: 10px;
-            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            margin: 5px;
+            border-radius: 10px;
+            padding: 10px 20px;
+            cursor: pointer;       
         }
+
+        
     </style>
 </head>
 <body>
@@ -74,8 +104,13 @@
             </div>
         </div>
     </div>
-    <input placeholder="请输入消息内容"/>
-    <button>发送</button>
     </div>
+    <div class="chat-input">
+        <input placeholder="请输入消息内容"/>
+        <button>发送</button>
+    </div>
+    <div class="flex w-full items-center">
+</div>
 </body>
 </html>
+
