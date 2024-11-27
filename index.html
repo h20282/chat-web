@@ -133,8 +133,7 @@
             </div>
         </div>
         <div class="chat-input" v-if="connectionStatus !== 'Connected!'">
-            <input v-model="serverUrl" type="text" id="ws-url" placeholder="ws://localhost:7431/query"
-                @keydown.enter="connectWebSocket" />
+            <input v-model="serverUrl" type="text" id="ws-url" @keydown.enter="connectWebSocket" />
             <button @click="connectWebSocket">连接</button>
         </div>
         <div class="chat-input" v-if="connectionStatus === 'Connected!'">
@@ -184,7 +183,7 @@
             setup() {
                 const messages = reactive([]);
                 const newMessage = ref('');
-                const serverUrl = ref('ws://localhost:7431/query');
+                const serverUrl = ref('wss://echo.websocket.org/');
                 const connectionStatus = ref('');
                 let socket = null;
 
